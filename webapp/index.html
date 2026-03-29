@@ -359,6 +359,19 @@ footer span{color:var(--coral)}
 .dnav-dot.on{background:var(--teal);transform:scale(1.5)}
 .dnav-dot:hover{background:var(--mgray)}
 
+/* ── Analogy box ────────────────────────────────────────────────── */
+.analogy{
+  background:rgba(46,196,182,.05);border:1px solid rgba(46,196,182,.18);
+  border-left:4px solid var(--teal);border-radius:10px;
+  padding:.9rem 1.2rem;flex-shrink:0;display:flex;align-items:flex-start;gap:.8rem;
+}
+.analogy-icon{font-size:1.35rem;flex-shrink:0;line-height:1.4}
+.analogy-body{flex:1}
+.analogy-label{font-size:.73rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.9px;margin-bottom:.25rem}
+.analogy-text{font-size:.93rem;color:var(--lgray);line-height:1.65}
+.analogy-text strong{color:var(--white)}
+.analogy-text em{color:var(--mgray)}
+
 /* ── Print ──────────────────────────────────────────────────────── */
 @media print{
   .top-nav,.pres-bar,.pres-prog,.dot-nav,#tab-dashboard{display:none!important}
@@ -544,6 +557,7 @@ footer span{color:var(--coral)}
             </ul>
           </div>
         </div>
+        <div class="analogy"><div class="analogy-icon">🌊</div><div class="analogy-body"><div class="analogy-label">Plain English</div><div class="analogy-text">Think of coral reefs as the <strong>Amazon rainforest of the ocean</strong> — they cover less than 1% of the sea floor but support 25% of all marine species and 500M people's dinner plates. When the reef collapses, the entire food chain built on top of it collapses too.</div></div></div>
         <div class="sl-cite">NOAA Ocean Service · The Nature Conservancy Ocean Wealth (2021) · World Bank Fisheries Employment</div>
       </div>
     </div>
@@ -563,6 +577,7 @@ footer span{color:var(--coral)}
           <div class="cw-title">Annual Median Bleaching Severity — GCBD 1985–2020</div>
           <canvas id="c-timeline"></canvas>
         </div>
+        <div class="analogy"><div class="analogy-icon">🌡️</div><div class="analogy-body"><div class="analogy-label">Plain English</div><div class="analogy-text">Coral bleaching works like a <strong>human fever</strong>. A short spike is survivable — corals can recover. But at sustained high temperatures they eject their food source (symbiotic algae) and turn white. The ocean has been running that fever <strong>non-stop since 2023</strong>, with no break to recover.</div></div></div>
         <!-- NOTEBOOK CELL S3 -->
         <div class="nb-wrap">
           <div class="nb-header">
@@ -628,6 +643,7 @@ That jump happened because of the 4th Global Bleaching Event (2023–25)</div>
           <p class="quote">"Alert Level 5 = &gt;80% coral mortality risk within weeks. When your measurement tool runs out of room, the problem has outpaced our expectations."</p>
           <p class="cite">NOAA Climate.gov · December 2023</p>
         </div>
+        <div class="analogy"><div class="analogy-icon">📏</div><div class="analogy-body"><div class="analogy-label">Plain English</div><div class="analogy-text">Imagine a thermometer that only goes to 42°C because doctors never expected a patient to survive higher. Then someone walks in at 45°C. That was NOAA's old 2-level alert scale — <strong>they had to add 3 new levels because reality exceeded the instrument</strong>.</div></div></div>
         <!-- NOTEBOOK CELL S4 -->
         <div class="nb-wrap">
           <div class="nb-header">
@@ -731,6 +747,7 @@ max              100.00     24.80                     2.81</div>
             </div>
           </div>
         </div>
+        <div class="analogy"><div class="analogy-icon">🏥</div><div class="analogy-body"><div class="analogy-label">Plain English</div><div class="analogy-text">The GCBD is like a <strong>global hospital registry for coral reefs</strong> — 8,973 patient checkups across 93 countries over 40 years, each recording vitals: temperature stress, bleaching severity, depth, and water clarity. We're the doctors reading the charts.</div></div></div>
         <div class="sl-cite">van Woesik &amp; Kratochwill (2022), Scientific Data 9, 166 · doi.org/10.6084/m9.figshare.c.5314466</div>
       </div>
     </div>
@@ -773,6 +790,7 @@ Mann-Whitney U  p = 1.00e-57  → change is REAL</div>
             </div>
           </div>
         </div>
+        <div class="analogy"><div class="analogy-icon">📈</div><div class="analogy-body"><div class="analogy-label">Plain English</div><div class="analogy-text">Picture a patient's blood pressure chart: <strong>flat and normal for 30 years</strong>, then post-2015 it spikes and never comes back down. A p-value of 10⁻⁵⁷ means there's essentially zero probability this is random noise — <strong>the climate shifted, and the data screams it</strong>.</div></div></div>
         <div class="sl-cite">GCBD (8,973 records, 1980–2020) · Mann-Whitney U test · scipy 1.11</div>
       </div>
     </div>
@@ -835,6 +853,7 @@ Latitude                   2.391</div>
             </div>
           </div>
         </div>
+        <div class="analogy"><div class="analogy-icon">👨‍⚕️</div><div class="analogy-body"><div class="analogy-label">Plain English</div><div class="analogy-text"><strong>XGBoost = 200 doctors</strong> each independently voting on a diagnosis, then averaging the result. <strong>SHAP = the post-it note</strong> each doctor leaves explaining which symptom most influenced their vote. We don't just get a prediction — we get a reason, which is what makes it actionable for policy.</div></div></div>
         <div class="sl-cite">XGBoost 2.1.4 · SHAP 0.49.1 · NASA Tick Tick Bloom (Yang Xu, 2023)</div>
       </div>
     </div>
@@ -856,8 +875,9 @@ Latitude                   2.391</div>
               </ul>
             </div>
           </div>
-          <div id="pres-map" style="border-radius:11px;border:1px solid rgba(46,196,182,.18);min-height:0;flex:1"></div>
+          <div id="pres-map" style="border-radius:11px;border:1px solid rgba(46,196,182,.18);height:390px;width:100%;flex-shrink:0"></div>
         </div>
+        <div class="analogy"><div class="analogy-icon">🗺️</div><div class="analogy-body"><div class="analogy-label">Plain English</div><div class="analogy-text">Think of this as a <strong>wildfire risk map for the ocean</strong>. Instead of "which hillside will burn," we're predicting "which reef will bleach into a ghost reef." Palau scores 0.976 — near-certain collapse. The map tells us where to act <em>before</em> the fire starts, not after.</div></div></div>
         <div class="sl-cite">GCBD XGBoost risk model · Risk score = normalized SHAP-weighted bleaching probability</div>
       </div>
     </div>
@@ -904,6 +924,7 @@ Sully et al. (2019) result: INDEPENDENTLY CONFIRMED</div>
             </div>
           </div>
         </div>
+        <div class="analogy"><div class="analogy-icon">🦠</div><div class="analogy-body"><div class="analogy-label">Plain English — The Hygiene Hypothesis</div><div class="analogy-text">Children raised in overly sterile environments develop more allergies — their immune systems never learned to adapt. <strong>Same principle:</strong> reefs in perpetually calm, stable water never built heat tolerance. They're the immunocompromised patients of the ocean — the ones that need the most protection.</div></div></div>
         <div class="sl-cite">Sully et al. (2019), Nature Communications · GCBD SHAP TreeExplainer analysis</div>
       </div>
     </div>
@@ -949,6 +970,7 @@ Great Astrolabe Reef            48       0.770  380,000 fishers
             </div>
           </div>
         </div>
+        <div class="analogy"><div class="analogy-icon">🏘️</div><div class="analogy-body"><div class="analogy-label">Plain English</div><div class="analogy-text">Like mapping <strong>hospital closures onto the most underserved neighborhoods</strong>. The communities hit hardest — Pacific atoll nations, Indonesian fishing villages, East African subsistence fishers — already have <strong>zero backup options</strong>. No reef = no food, no income, no natural sea wall.</div></div></div>
         <div class="sl-cite">GCBD risk model + World Bank Fisheries Employment + regional economic reports</div>
       </div>
     </div>
@@ -997,6 +1019,7 @@ R²   = -0.22
             </div>
           </div>
         </div>
+        <div class="analogy"><div class="analogy-icon">🚨</div><div class="analogy-body"><div class="analogy-label">Plain English — Why Negative R² is Actually a Finding</div><div class="analogy-text">Imagine training a flood predictor on <strong>40 years of normal rainfall</strong>, then testing it on the year a 500-year flood hit. The model "fails" — but the flood wasn't the model's fault. Our R² = −0.22 is <strong>proof the 4th Bleaching Event broke every historical pattern</strong>, not proof the model is wrong.</div></div></div>
         <div class="sl-cite">sklearn 1.3 · Temporal split: train pre-2015 (8,259) · test 2015–2020 (714)</div>
       </div>
     </div>
@@ -1033,6 +1056,7 @@ R²   = -0.22
             <div style="font-size:.9rem;color:var(--lgray)">📊 <strong style="color:var(--white)">Economic modeling</strong><br>Full GDP impact simulation for reef loss scenarios</div>
           </div>
         </div>
+        <div class="analogy"><div class="analogy-icon">🔬</div><div class="analogy-body"><div class="analogy-label">Plain English</div><div class="analogy-text">Our dataset is like a doctor who <strong>only ever treated wealthy, well-studied patients</strong>. We know a lot about Australian and US reefs — almost nothing about Madagascar or Cambodia. The bias isn't a flaw in our work; it's a global research infrastructure problem that our model inherits.</div></div></div>
         <!-- NOTEBOOK CELL S12 -->
         <div class="nb-wrap">
           <div class="nb-header">
@@ -1111,6 +1135,7 @@ France (Pacific)    412
           <p>"The data tells us exactly where collapse is coming — and exactly which communities will bear the cost. The only question left is whether we act in time."</p>
           <cite>Shihab Jamal &amp; Visula Peduru · SBU AI Community Datathon 2026 · March 2026</cite>
         </div>
+        <div class="analogy"><div class="analogy-icon">🎯</div><div class="analogy-body"><div class="analogy-label">The Bottom Line</div><div class="analogy-text">We have <strong>the map, the names, and the numbers</strong>. We know which reefs will collapse, which communities will bear the cost, and what drives it. The data has done its job. The only remaining question is whether we use it in time — or tell our kids about coral reefs <em>in past tense</em>.</div></div></div>
         <div class="sl-cite">GCBD · NOAA Coral Reef Watch · ICRI (2025) · The Nature Conservancy Ocean Wealth · World Bank</div>
       </div>
     </div>
@@ -1234,6 +1259,8 @@ function goSlide(n){
     animateCounter(el,v,s,p,900);
   });
   allSlides[cur].scrollTop=0;
+  // Slide 8 (index 7): lazy-init map and force resize so tiles render correctly
+  if(cur===7){initPresMap();setTimeout(()=>{if(_presMap)_presMap.invalidateSize();},200);}
 }
 
 document.addEventListener('keydown',e=>{
@@ -1301,6 +1328,7 @@ fetch('data.json').then(r=>r.json()).then(data=>{
 /* ── Presentation charts (lazy init) ────────────────────────────────── */
 let presInited=false;
 let presMapInited=false;
+let _presMap=null;
 
 function initPresCharts(){
   if(presInited)return;
@@ -1445,17 +1473,23 @@ function initPresMap(){
   if(presMapInited)return;
   presMapInited=true;
   const pm=L.map('pres-map',{scrollWheelZoom:false,zoomControl:true}).setView([8,110],2.1);
+  _presMap=pm;
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{attribution:'&copy; CARTO',maxZoom:18}).addTo(pm);
-  if(window._REEFS){
-    window._REEFS.forEach(d=>{
-      const c=rColor(d.risk_level);
-      const r=d.risk_level==='critical'?11:d.risk_level==='high'?8:6;
-      const m=L.circleMarker([d.lat,d.lon],{radius:r,fillColor:c,color:'rgba(255,255,255,.5)',weight:1.2,fillOpacity:.9}).addTo(pm);
-      m.bindPopup(`<strong>${d.region}</strong><br>${d.country} — <b style="color:${c}">${d.bleaching_pct}%</b> bleaching<br>Risk: <b>${d.risk_score?.toFixed(3)??'—'}</b>`);
-      m.on('mouseover',function(){this.openPopup()});
-    });
-  }
-  setTimeout(()=>pm.invalidateSize(),200);
+  const addMarkers=()=>{
+    if(window._REEFS){
+      window._REEFS.forEach(d=>{
+        const c=rColor(d.risk_level);
+        const r=d.risk_level==='critical'?11:d.risk_level==='high'?8:6;
+        const m=L.circleMarker([d.lat,d.lon],{radius:r,fillColor:c,color:'rgba(255,255,255,.5)',weight:1.2,fillOpacity:.9}).addTo(pm);
+        m.bindPopup(`<strong>${d.region}</strong><br>${d.country} — <b style="color:${c}">${d.bleaching_pct}%</b> bleaching<br>Risk: <b>${d.risk_score?.toFixed(3)??'—'}</b>`);
+        m.on('mouseover',function(){this.openPopup()});
+      });
+    } else {
+      setTimeout(addMarkers,300);
+    }
+  };
+  addMarkers();
+  setTimeout(()=>pm.invalidateSize(),250);
 }
 
 /* ── Community table with risk filter ──────────────────────────────── */
