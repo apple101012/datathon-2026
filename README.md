@@ -1,4 +1,4 @@
-# [Team Name TBD] -- Coral Reef Collapse Risk & Human Community Impact
+# Coral Reef Collapse Risk & Human Community Impact
 
 > **Research Question:** Which coral reefs are most at risk of collapse and which human communities will lose food security and income as a result?
 
@@ -9,8 +9,8 @@
 
 | Name | Role | GitHub |
 |------|------|--------|
-| [Your Name] | ML Analysis & Data Science | [@your-github] |
-| [Friend's Name] | Domain Research & Presentation | [@nyviruzz] |
+| Shihab Jamal | ML Analysis & Data Science | [@apple101012](https://github.com/apple101012) |
+| Nyviruz | Domain Research & Presentation | [@nyviruzz](https://github.com/nyviruzz) |
 
 ## Abstract
 
@@ -18,9 +18,9 @@ This project combines satellite-derived sea surface temperature data, coral blea
 
 ## Key Findings
 
-- [Finding 1: e.g., "SST variance is the strongest protective factor against bleaching, but local human disturbances negate this resilience"]
-- [Finding 2: e.g., "Coral Triangle and Pacific Island communities face the highest compound risk -- extreme bleaching exposure combined with near-total dependence on reef fisheries"]
-- [Finding 3: e.g., "The 2023-2025 global bleaching event pushed X% of monitored reefs past NOAA Alert Level 2 thresholds for the first time"]
+- **SST variance is protective:** Reefs with higher temperature variability show significantly lower bleaching rates, even under equivalent mean thermal stress (Sully et al. 2019, *Nature Communications*)
+- **Coral Triangle & Pacific Islands face highest compound risk:** Extreme bleaching exposure combined with near-total dependence on reef fisheries for food security and income
+- **The 4th Global Bleaching Event (2023-2025) hit 84% of the world's reefs** -- forcing NOAA to extend its alert scale with 3 new categories (Levels 3-5) never previously needed
 
 ## Repository Structure
 
@@ -40,7 +40,11 @@ datathon-2026/
 
 - NOAA Coral Reef Watch. "Daily Global 5km Satellite Coral Bleaching Monitoring Products (v3.1)." *NOAA Coral Reef Watch*, 2023-2025. https://coralreefwatch.noaa.gov/product/5km/
 - Donner, S.D., Rickbeil, G.J.M., & Heron, S.F. "A new, high-resolution global mass coral bleaching database." *PLOS ONE*, vol. 12, no. 4, 2017, e0175490. https://doi.org/10.1371/journal.pone.0175490
-- [Additional datasets TBD -- e.g., World Resources Institute Reefs at Risk, SEDAC population data, World Bank fisheries data]
+- NOAA. "Optimum Interpolation SST (OISST) v2.1." *NOAA Physical Sciences Laboratory*, 2023. https://psl.noaa.gov/data/gridded/data.noaa.oisst.v2.highres.html
+
+## Important Note on Data
+
+The notebook includes a synthetic data fallback that generates representative data if the Figshare API is unavailable during execution. The synthetic data mirrors the statistical distributions of the Global Coral-Bleaching Database (GCBD) but should not be cited as empirical evidence. Check the notebook output to confirm whether real or synthetic data was used in a given run.
 
 ## Methodology
 
@@ -54,7 +58,7 @@ datathon-2026/
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/[your-username]/datathon-2026.git
+   git clone https://github.com/apple101012/datathon-2026.git
    cd datathon-2026
    ```
 2. Install dependencies:
