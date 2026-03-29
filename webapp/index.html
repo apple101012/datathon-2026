@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coral Reef Collapse & Food Security | SBU AI Datathon 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;color:#e8f0f8;background:#0a1628;line-height:1.6}
+a{color:#4ECDC4}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,#0a1628 0%,#0d2847 50%,#133b5c 100%);text-align:center;padding:5rem 2rem 3rem}
+.hero h1{font-size:2.6rem;font-weight:800;margin-bottom:.5rem;background:linear-gradient(90deg,#4ECDC4,#FF6B6B);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero .subtitle{font-size:1.1rem;color:#8ba5c4;max-width:650px;margin:0 auto 2rem}
+.team-photos{display:flex;gap:1.5rem;justify-content:center;margin-bottom:2rem;flex-wrap:wrap}
+.team-photos .photo{width:90px;height:90px;border-radius:50%;background:#1a3a5c;border:2px solid #4ECDC4;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:#6a9ec4}
+.abstract{max-width:720px;margin:0 auto;font-size:.95rem;color:#9bb8d4;text-align:left;background:rgba(255,255,255,.04);padding:1.5rem;border-radius:12px;border:1px solid rgba(78,205,196,.15)}
+
+/* Section */
+section{padding:4rem 2rem}
+.section-title{text-align:center;font-size:1.8rem;font-weight:700;margin-bottom:.5rem}
+.section-sub{text-align:center;color:#6a9ec4;margin-bottom:2rem;font-size:.95rem}
+
+/* Map */
+#map-section{background:#0d1e36}
+#map{height:480px;border-radius:12px;max-width:1100px;margin:0 auto;border:1px solid rgba(78,205,196,.2)}
+
+/* Findings */
+.findings{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto}
+.card{background:linear-gradient(145deg,#0f2744,#132d4f);border:1px solid rgba(78,205,196,.15);border-radius:14px;padding:2rem;text-align:center;transition:transform .2s}
+.card:hover{transform:translateY(-4px)}
+.card .big-num{font-size:2.4rem;font-weight:800;color:#FF6B6B}
+.card p{color:#8ba5c4;font-size:.9rem;margin-top:.5rem}
+.card.teal .big-num{color:#4ECDC4}
+
+/* Methodology */
+.method-wrap{max-width:800px;margin:0 auto}
+.method-wrap p{color:#9bb8d4;font-size:.95rem;margin-bottom:1rem}
+.diagram-placeholder{height:180px;border:2px dashed rgba(78,205,196,.3);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#4a6e8a;font-size:.9rem}
+
+/* Team */
+.team-grid{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap}
+.profile{background:linear-gradient(145deg,#0f2744,#132d4f);border:1px solid rgba(78,205,196,.15);border-radius:14px;padding:2rem;text-align:center;width:260px}
+.profile .avatar{width:100px;height:100px;border-radius:50%;background:#1a3a5c;margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;font-size:.75rem;color:#6a9ec4;border:2px solid #4ECDC4}
+.profile h3{font-size:1.1rem;margin-bottom:.2rem}
+.profile .role{color:#4ECDC4;font-size:.85rem}
+
+/* Footer */
+footer{text-align:center;padding:2rem;color:#4a6e8a;font-size:.8rem;border-top:1px solid rgba(78,205,196,.1)}
+footer span{color:#FF6B6B}
+
+/* Legend */
+.legend{display:flex;gap:1.2rem;justify-content:center;margin-top:1rem;flex-wrap:wrap;font-size:.8rem;color:#8ba5c4}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:4px;vertical-align:middle}
+
+@media(max-width:600px){
+  .hero h1{font-size:1.8rem}
+  #map{height:340px}
+  .card .big-num{font-size:1.8rem}
+}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>Coral Reefs at the Breaking Point</h1>
+  <p class="subtitle">Which reefs are most at risk of collapse, and which communities will lose food security and income?</p>
+  <div class="team-photos">
+    <div class="photo">Your Photo</div>
+    <div class="photo">Your Photo</div>
+  </div>
+  <div class="abstract">
+    <strong>Abstract.</strong> The 4th Global Coral Bleaching Event (2023-2025) has affected 84% of the world's reef area. Using the Global Coral Bleaching Database, NOAA Coral Reef Watch SST data, and socioeconomic dependency indices, we identify the 30 most at-risk reef systems and quantify the human communities that depend on them for food and income. Our analysis reveals that over 500 million people face food-security and livelihood impacts, with small island developing states disproportionately affected. Counterintuitively, reefs exposed to high historical temperature variance show greater resilience — a finding with direct policy implications for marine protected area prioritization.
+  </div>
+</section>
+
+<!-- Interactive Map -->
+<section id="map-section">
+  <h2 class="section-title">Global Bleaching Risk Map</h2>
+  <p class="section-sub">Click a marker to see reef details and community impact</p>
+  <div id="map"></div>
+  <div class="legend">
+    <span><i style="background:#dc2626"></i> Critical (&gt;70%)</span>
+    <span><i style="background:#f59e0b"></i> High (55-70%)</span>
+    <span><i style="background:#fbbf24"></i> Medium (40-55%)</span>
+    <span><i style="background:#22c55e"></i> Low (&lt;40%)</span>
+  </div>
+</section>
+
+<!-- Key Findings -->
+<section>
+  <h2 class="section-title">Key Findings</h2>
+  <p class="section-sub">Data-driven insights from the Global Coral Bleaching Database</p>
+  <div class="findings">
+    <div class="card">
+      <div class="big-num">84%</div>
+      <p><strong>of reefs affected</strong> in the 4th Global Bleaching Event (2023-2025) — the most severe on record, surpassing 2014-2017.</p>
+    </div>
+    <div class="card teal">
+      <div class="big-num">500M+</div>
+      <p><strong>people depend on reefs</strong> for food, coastal protection, and livelihoods — concentrated in SE Asia and Small Island States.</p>
+    </div>
+    <div class="card">
+      <div class="big-num" style="font-size:1.6rem">High Variance = Protection</div>
+      <p>Reefs with greater historical SST variability show <strong>lower bleaching severity</strong> — thermal conditioning builds resilience.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Methodology -->
+<section>
+  <h2 class="section-title">Methodology</h2>
+  <p class="section-sub">Combining ecological and socioeconomic data</p>
+  <div class="method-wrap">
+    <p>We merged the <strong>Global Coral Bleaching Database</strong> (GCBD, 40,000+ survey records) with <strong>NOAA Coral Reef Watch</strong> sea surface temperature anomalies and <strong>WorldPop</strong> coastal population grids. Bleaching severity was modeled as a function of Degree Heating Weeks (DHW), historical SST variance, reef depth, and local stressors. Community dependency was estimated using FAO fisheries data and national tourism statistics.</p>
+    <p>Risk scores combine ecological vulnerability (bleaching probability, recovery rate) with socioeconomic exposure (dependent population, economic value, alternative livelihood availability).</p>
+    <div class="diagram-placeholder">[ Methodology Pipeline Diagram — Replace with your figure ]</div>
+  </div>
+</section>
+
+<!-- Team -->
+<section>
+  <h2 class="section-title">Team</h2>
+  <p class="section-sub">SBU AI Community Datathon 2026</p>
+  <div class="team-grid">
+    <div class="profile">
+      <div class="avatar">Your Photo</div>
+      <h3>Team Member 1</h3>
+      <p class="role">Data Analysis & Modeling</p>
+    </div>
+    <div class="profile">
+      <div class="avatar">Your Photo</div>
+      <h3>Team Member 2</h3>
+      <p class="role">Visualization & Web Dev</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p><span>SBU AI Community Datathon 2026</span> | Coral Reef Collapse & Food Security</p>
+  <p style="margin-top:.4rem">Data: NOAA Coral Reef Watch, Global Coral Bleaching Database (van Woesik & Kratochwill), FAO, WorldPop</p>
+</footer>
+
+<script>
+// Map setup
+const map = L.map('map',{scrollWheelZoom:false}).setView([5,60],2.3);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
+  attribution:'&copy; <a href="https://carto.com/">CARTO</a>',maxZoom:18
+}).addTo(map);
+
+function riskColor(level){
+  return {critical:'#dc2626',high:'#f59e0b',medium:'#fbbf24',low:'#22c55e'}[level]||'#fbbf24';
+}
+
+fetch('data.json').then(r=>r.json()).then(data=>{
+  data.forEach(d=>{
+    const c=riskColor(d.risk_level);
+    L.circleMarker([d.lat,d.lon],{
+      radius: d.risk_level==='critical'?10:d.risk_level==='high'?8:6,
+      fillColor:c,color:'#fff',weight:1,fillOpacity:.85
+    }).addTo(map).bindPopup(`
+      <div style="font-family:Inter,sans-serif;min-width:200px">
+        <strong style="font-size:1.05rem">${d.region}</strong><br>
+        <span style="color:#666">${d.country}</span>
+        <hr style="border:none;border-top:1px solid #eee;margin:.5rem 0">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.3rem;font-size:.85rem">
+          <span>Bleaching:</span><strong style="color:${c}">${d.bleaching_pct}%</strong>
+          <span>Risk:</span><strong style="text-transform:capitalize">${d.risk_level}</strong>
+          <span>People:</span><strong>${d.dependent_people}</strong>
+          <span>Tourism:</span><strong>${d.tourism_value}</strong>
+        </div>
+      </div>
+    `);
+  });
+});
+</script>
+</body>
+</html>
