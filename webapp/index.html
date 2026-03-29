@@ -130,21 +130,21 @@ footer span{color:var(--coral)}
 .slide{
   position:absolute;inset:0;overflow-y:auto;
   display:none;flex-direction:column;
-  padding:1.8rem 3rem 1.5rem;
+  padding:2.4rem 4.5rem 2rem;
   animation:fadeSlide .28s ease forwards;
 }
 .slide.active{display:flex}
 @keyframes fadeSlide{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
 
 /* Slide structure */
-.sl-hdr{display:flex;align-items:center;gap:.9rem;margin-bottom:1.4rem;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,.06);flex-shrink:0}
-.sl-accent-bar{width:5px;height:1.9rem;border-radius:3px;background:var(--teal);flex-shrink:0}
+.sl-hdr{display:flex;align-items:center;gap:1rem;margin-bottom:1.8rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(255,255,255,.07);flex-shrink:0}
+.sl-accent-bar{width:6px;height:2.4rem;border-radius:3px;background:var(--teal);flex-shrink:0}
 .sl-accent-bar.coral{background:var(--coral)}
 .sl-accent-bar.yellow{background:var(--yellow)}
-.sl-num{font-size:.7rem;font-weight:700;letter-spacing:1.5px;color:var(--teal);background:rgba(46,196,182,.1);padding:.2rem .55rem;border-radius:4px;text-transform:uppercase;white-space:nowrap}
-.sl-title{font-size:1.6rem;font-weight:800;color:var(--white);letter-spacing:-.3px}
-.sl-body{flex:1;display:flex;flex-direction:column;gap:1rem;min-height:0}
-.sl-cite{font-size:.7rem;color:var(--dgray);font-style:italic;padding-top:.6rem;border-top:1px solid rgba(255,255,255,.04);flex-shrink:0;margin-top:auto}
+.sl-num{font-size:.75rem;font-weight:700;letter-spacing:1.5px;color:var(--teal);background:rgba(46,196,182,.1);padding:.25rem .65rem;border-radius:4px;text-transform:uppercase;white-space:nowrap}
+.sl-title{font-size:clamp(1.75rem,2.4vw,2.5rem);font-weight:800;color:var(--white);letter-spacing:-.4px}
+.sl-body{flex:1;display:flex;flex-direction:column;gap:1.2rem;min-height:0}
+.sl-cite{font-size:.75rem;color:var(--dgray);font-style:italic;padding-top:.7rem;border-top:1px solid rgba(255,255,255,.05);flex-shrink:0;margin-top:auto}
 
 /* Title slide */
 .title-hero{
@@ -154,73 +154,73 @@ footer span{color:var(--coral)}
   border:1px solid rgba(46,196,182,.12);position:relative;overflow:hidden;
 }
 .title-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(46,196,182,.06) 0%,transparent 65%);pointer-events:none}
-.th-pill{background:var(--teal);color:var(--navy);font-size:.73rem;font-weight:800;letter-spacing:1.5px;padding:.35rem 1.1rem;border-radius:20px;text-transform:uppercase;margin-bottom:1.5rem;display:inline-block}
-.th-h1{font-size:2.7rem;font-weight:900;color:var(--white);line-height:1.2;letter-spacing:-.5px;margin-bottom:1rem}
-.th-sub{font-size:.97rem;color:var(--mgray);max-width:600px;margin-bottom:2rem;line-height:1.6}
-.th-line{width:80px;height:2.5px;background:linear-gradient(90deg,var(--teal),var(--coral));border-radius:2px;margin:.8rem auto}
-.th-team{font-size:1.1rem;font-weight:700;color:var(--teal);margin-bottom:.3rem}
-.th-event{font-size:.86rem;color:var(--mgray)}
+.th-pill{background:var(--teal);color:var(--navy);font-size:.8rem;font-weight:800;letter-spacing:1.5px;padding:.4rem 1.3rem;border-radius:20px;text-transform:uppercase;margin-bottom:1.8rem;display:inline-block}
+.th-h1{font-size:clamp(2.4rem,4vw,4rem);font-weight:900;color:var(--white);line-height:1.15;letter-spacing:-.6px;margin-bottom:1.2rem}
+.th-sub{font-size:clamp(1rem,1.4vw,1.15rem);color:var(--mgray);max-width:640px;margin-bottom:2.2rem;line-height:1.7}
+.th-line{width:90px;height:3px;background:linear-gradient(90deg,var(--teal),var(--coral));border-radius:2px;margin:1rem auto}
+.th-team{font-size:1.25rem;font-weight:700;color:var(--teal);margin-bottom:.4rem}
+.th-event{font-size:.95rem;color:var(--mgray)}
 
 /* Stat grid */
-.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.85rem;flex-shrink:0}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;flex-shrink:0}
 .scard{
-  background:var(--navy2);border-radius:11px;padding:1rem .9rem;text-align:center;
+  background:var(--navy2);border-radius:12px;padding:1.4rem 1.1rem;text-align:center;
   border:1px solid var(--dgray);position:relative;overflow:hidden;
   transition:transform .18s,border-color .18s,box-shadow .18s;cursor:default;
 }
-.scard:hover{transform:translateY(-3px);border-color:var(--hc,var(--teal));box-shadow:0 8px 24px rgba(0,0,0,.35)}
-.scard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--hc,var(--teal))}
-.scard-val{font-size:1.9rem;font-weight:900;color:var(--hc,var(--teal));line-height:1;letter-spacing:-.5px}
-.scard-lbl{font-size:.73rem;color:var(--mgray);margin-top:.35rem;line-height:1.3}
+.scard:hover{transform:translateY(-4px);border-color:var(--hc,var(--teal));box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.scard::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--hc,var(--teal))}
+.scard-val{font-size:clamp(2.2rem,3.2vw,3.4rem);font-weight:900;color:var(--hc,var(--teal));line-height:1;letter-spacing:-.5px}
+.scard-lbl{font-size:.82rem;color:var(--mgray);margin-top:.5rem;line-height:1.4}
 
 /* Info boxes */
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem}
-.ibox{background:var(--navy2);border:1px solid var(--dgray);border-radius:11px;padding:1.1rem;transition:border-color .18s}
-.ibox:hover{border-color:rgba(46,196,182,.25)}
-.ibox h4{font-size:.8rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.6px;margin-bottom:.65rem}
+.ibox{background:var(--navy2);border:1px solid var(--dgray);border-radius:12px;padding:1.3rem 1.4rem;transition:border-color .18s}
+.ibox:hover{border-color:rgba(46,196,182,.28)}
+.ibox h4{font-size:.88rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.6px;margin-bottom:.8rem}
 .ibox h4.coral{color:var(--coral)}
 .ibox h4.yellow{color:var(--yellow)}
 .ibox ul{list-style:none;padding:0}
-.ibox ul li{font-size:.85rem;color:var(--lgray);padding:.28rem 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;align-items:baseline;gap:.4rem}
+.ibox ul li{font-size:.95rem;color:var(--lgray);padding:.38rem 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;align-items:baseline;gap:.5rem;line-height:1.5}
 .ibox ul li:last-child{border-bottom:none}
-.ibox ul li::before{content:'›';color:var(--teal);flex-shrink:0}
-.ibox p{font-size:.85rem;color:var(--lgray);line-height:1.6}
+.ibox ul li::before{content:'›';color:var(--teal);flex-shrink:0;font-size:1.1rem}
+.ibox p{font-size:.95rem;color:var(--lgray);line-height:1.65}
 .ibox p strong{color:var(--white)}
-.ibox .quote{font-style:italic;color:var(--lgray)}
-.ibox .cite{font-size:.76rem;color:var(--mgray);margin-top:.5rem}
+.ibox .quote{font-style:italic;color:var(--lgray);font-size:1rem;line-height:1.7}
+.ibox .cite{font-size:.82rem;color:var(--mgray);margin-top:.55rem}
 
 /* Timeline */
-.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;flex-shrink:0}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;flex-shrink:0}
 .tlbox{
-  background:var(--navy2);border-radius:11px;padding:1.1rem;text-align:center;
+  background:var(--navy2);border-radius:12px;padding:1.4rem 1rem;text-align:center;
   border:1px solid var(--dgray);position:relative;overflow:hidden;transition:transform .2s;
 }
-.tlbox:hover{transform:translateY(-3px)}
+.tlbox:hover{transform:translateY(-4px)}
 .tlbox.hot{border-color:rgba(255,111,97,.5)}
-.tlbox.hot::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--coral)}
-.tl-yr{font-size:1rem;font-weight:700;color:var(--lgray);margin-bottom:.35rem}
-.tl-pct{font-size:2.1rem;font-weight:900;letter-spacing:-.5px}
+.tlbox.hot::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--coral)}
+.tl-yr{font-size:1.05rem;font-weight:700;color:var(--lgray);margin-bottom:.5rem}
+.tl-pct{font-size:clamp(2.2rem,3vw,3.2rem);font-weight:900;letter-spacing:-.5px}
 .tlbox.hot .tl-pct{color:var(--coral)}
 .tlbox:not(.hot) .tl-pct{color:var(--mgray)}
-.tl-lbl{font-size:.75rem;color:var(--mgray);margin-top:.3rem;line-height:1.4}
+.tl-lbl{font-size:.85rem;color:var(--mgray);margin-top:.45rem;line-height:1.5}
 
 /* Alert scale */
 .scale-wrap{display:grid;grid-template-columns:1fr 50px 1fr;gap:.8rem;align-items:start}
 .scale-col h4{text-align:center;font-size:.8rem;font-weight:700;margin-bottom:.65rem;padding:.4rem;border-radius:6px}
 .scale-col.old-s h4{background:rgba(46,196,182,.1);color:var(--teal)}
 .scale-col.new-s h4{background:rgba(255,111,97,.1);color:var(--coral)}
-.sitem{padding:.5rem .9rem;border-radius:7px;margin-bottom:.35rem;font-size:.85rem;font-weight:600;text-align:center;border:1px solid transparent;transition:transform .15s}
+.sitem{padding:.65rem 1rem;border-radius:7px;margin-bottom:.4rem;font-size:.95rem;font-weight:600;text-align:center;border:1px solid transparent;transition:transform .15s}
 .sitem:hover{transform:scale(1.02)}
 .scale-vs{display:flex;align-items:center;justify-content:center;color:var(--mgray);font-size:1.1rem;font-weight:700;padding-top:2.5rem}
 
 /* Variable table */
 .vtable{width:100%;border-collapse:collapse}
-.vtable th{text-align:left;padding:.65rem .9rem;font-size:.75rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid rgba(46,196,182,.2)}
-.vtable td{padding:.58rem .9rem;font-size:.85rem;border-bottom:1px solid rgba(255,255,255,.04)}
+.vtable th{text-align:left;padding:.75rem 1rem;font-size:.82rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid rgba(46,196,182,.2)}
+.vtable td{padding:.68rem 1rem;font-size:.93rem;border-bottom:1px solid rgba(255,255,255,.04)}
 .vtable tr:nth-child(even) td{background:rgba(255,255,255,.02)}
 .vtable tr:hover td{background:rgba(46,196,182,.04)}
-.vtable .vn{color:var(--teal);font-family:var(--mono);font-size:.78rem}
+.vtable .vn{color:var(--teal);font-family:var(--mono);font-size:.85rem}
 .vtable .vd{color:var(--lgray)}
 .badge{display:inline-block;padding:.14rem .48rem;border-radius:4px;font-size:.7rem;font-weight:700}
 .badge.critical{background:rgba(255,111,97,.2);color:var(--coral);border:1px solid rgba(255,111,97,.3)}
@@ -228,69 +228,69 @@ footer span{color:var(--coral)}
 .badge.moderate{background:rgba(46,196,182,.15);color:var(--teal);border:1px solid rgba(46,196,182,.3)}
 
 /* Chart wrapper */
-.cw{background:var(--navy2);border:1px solid var(--dgray);border-radius:11px;padding:1rem;position:relative;transition:border-color .18s}
+.cw{background:var(--navy2);border:1px solid var(--dgray);border-radius:12px;padding:1.2rem 1.3rem;position:relative;transition:border-color .18s}
 .cw:hover{border-color:rgba(46,196,182,.3)}
-.cw-title{font-size:.75rem;font-weight:700;color:var(--mgray);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.7rem}
-.cw canvas{max-height:260px}
+.cw-title{font-size:.82rem;font-weight:700;color:var(--mgray);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.9rem}
+.cw canvas{max-height:300px}
 
 /* Paradox */
-.paradox{display:grid;grid-template-columns:1fr 48px 1fr;gap:.8rem;align-items:center}
-.pbox{background:var(--navy2);border-radius:11px;padding:1.2rem;text-align:center;border:2px solid var(--dgray);transition:border-color .2s,transform .2s}
-.pbox:hover{transform:translateY(-3px)}
+.paradox{display:grid;grid-template-columns:1fr 60px 1fr;gap:1rem;align-items:center}
+.pbox{background:var(--navy2);border-radius:12px;padding:1.5rem 1.3rem;text-align:center;border:2px solid var(--dgray);transition:border-color .2s,transform .2s}
+.pbox:hover{transform:translateY(-4px)}
 .pbox.frag{border-color:rgba(255,111,97,.45)}
 .pbox.frag:hover{border-color:var(--coral)}
 .pbox.resil{border-color:rgba(46,196,182,.45)}
 .pbox.resil:hover{border-color:var(--teal)}
-.pbox h4{font-size:.95rem;font-weight:700;margin-bottom:.6rem}
+.pbox h4{font-size:1.1rem;font-weight:700;margin-bottom:.7rem}
 .pbox.frag h4{color:var(--coral)}
 .pbox.resil h4{color:var(--teal)}
-.pbox p{font-size:.82rem;color:var(--mgray);line-height:1.5;margin-bottom:.6rem}
-.pverd{font-size:.82rem;font-weight:700;padding:.35rem .7rem;border-radius:6px}
+.pbox p{font-size:.95rem;color:var(--mgray);line-height:1.6;margin-bottom:.7rem}
+.pverd{font-size:.9rem;font-weight:700;padding:.4rem .85rem;border-radius:6px}
 .pbox.frag .pverd{background:rgba(255,111,97,.1);color:var(--coral)}
 .pbox.resil .pverd{background:rgba(46,196,182,.1);color:var(--teal)}
-.parrow{text-align:center;font-size:1.6rem;color:var(--dgray)}
+.parrow{text-align:center;font-size:2rem;color:var(--dgray)}
 
 /* Metrics */
-.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem;flex-shrink:0}
-.mcard{background:var(--navy2);border-radius:11px;padding:1.1rem;text-align:center;border:1px solid var(--dgray);position:relative;overflow:hidden;transition:transform .18s}
-.mcard:hover{transform:translateY(-3px)}
-.mcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--mc,var(--teal))}
-.mcard-n{font-size:.72rem;font-weight:700;color:var(--mgray);text-transform:uppercase;letter-spacing:.8px;margin-bottom:.35rem}
-.mcard-v{font-size:2rem;font-weight:900;color:var(--mc,var(--teal));letter-spacing:-.5px;line-height:1}
-.mcard-d{font-size:.76rem;color:var(--mgray);margin-top:.4rem;line-height:1.4}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;flex-shrink:0}
+.mcard{background:var(--navy2);border-radius:12px;padding:1.5rem 1.2rem;text-align:center;border:1px solid var(--dgray);position:relative;overflow:hidden;transition:transform .18s}
+.mcard:hover{transform:translateY(-4px)}
+.mcard::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--mc,var(--teal))}
+.mcard-n{font-size:.8rem;font-weight:700;color:var(--mgray);text-transform:uppercase;letter-spacing:.8px;margin-bottom:.5rem}
+.mcard-v{font-size:clamp(2rem,2.8vw,2.8rem);font-weight:900;color:var(--mc,var(--teal));letter-spacing:-.5px;line-height:1}
+.mcard-d{font-size:.88rem;color:var(--mgray);margin-top:.5rem;line-height:1.5}
 
 /* Risk table */
 .rtable{width:100%;border-collapse:collapse}
-.rtable th{text-align:left;padding:.6rem .8rem;font-size:.74rem;font-weight:700;color:var(--mgray);text-transform:uppercase;letter-spacing:.5px;background:var(--navy2);border-bottom:1px solid var(--dgray);position:sticky;top:0}
-.rtable td{padding:.58rem .8rem;font-size:.84rem;border-bottom:1px solid rgba(255,255,255,.04)}
+.rtable th{text-align:left;padding:.7rem 1rem;font-size:.8rem;font-weight:700;color:var(--mgray);text-transform:uppercase;letter-spacing:.5px;background:var(--navy2);border-bottom:1px solid var(--dgray);position:sticky;top:0}
+.rtable td{padding:.68rem 1rem;font-size:.93rem;border-bottom:1px solid rgba(255,255,255,.04)}
 .rtable tr:hover td{background:rgba(46,196,182,.05);cursor:default}
 .rtable .risk-val{font-weight:700}
 
 /* Conclusion */
-.cboxes{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;flex-shrink:0}
-.cbox{background:var(--navy2);border-radius:11px;padding:1.1rem;border-top:3px solid var(--tc,var(--teal));transition:transform .2s}
-.cbox:hover{transform:translateY(-3px)}
-.cbox h4{font-size:.85rem;font-weight:700;color:var(--white);margin-bottom:.65rem}
+.cboxes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;flex-shrink:0}
+.cbox{background:var(--navy2);border-radius:12px;padding:1.4rem 1.3rem;border-top:4px solid var(--tc,var(--teal));transition:transform .2s}
+.cbox:hover{transform:translateY(-4px)}
+.cbox h4{font-size:.95rem;font-weight:700;color:var(--white);margin-bottom:.8rem}
 .cbox ul{list-style:none;padding:0}
-.cbox ul li{font-size:.82rem;color:var(--mgray);padding:.28rem 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:.4rem}
+.cbox ul li{font-size:.92rem;color:var(--mgray);padding:.35rem 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:.5rem;line-height:1.5}
 .cbox ul li::before{content:'→';color:var(--tc,var(--teal));flex-shrink:0}
-.qbar{background:linear-gradient(100deg,rgba(46,196,182,.07),rgba(255,111,97,.07));border:1px solid rgba(46,196,182,.18);border-radius:11px;padding:1.2rem 1.8rem;text-align:center;flex-shrink:0}
-.qbar p{font-size:1.05rem;font-style:italic;color:var(--white);line-height:1.6}
-.qbar cite{font-size:.8rem;color:var(--mgray);font-style:normal;display:block;margin-top:.4rem}
+.qbar{background:linear-gradient(100deg,rgba(46,196,182,.07),rgba(255,111,97,.07));border:1px solid rgba(46,196,182,.18);border-radius:12px;padding:1.5rem 2.2rem;text-align:center;flex-shrink:0}
+.qbar p{font-size:1.15rem;font-style:italic;color:var(--white);line-height:1.7}
+.qbar cite{font-size:.88rem;color:var(--mgray);font-style:normal;display:block;margin-top:.5rem}
 
 /* Alert box */
-.alert-box{background:rgba(255,111,97,.07);border:1px solid rgba(255,111,97,.25);border-radius:10px;padding:.9rem 1.1rem;flex-shrink:0}
-.alert-box p{font-size:.9rem;color:var(--coral);font-weight:700;margin-bottom:.2rem}
-.alert-box span{font-size:.85rem;color:var(--lgray)}
+.alert-box{background:rgba(255,111,97,.07);border:1px solid rgba(255,111,97,.25);border-radius:11px;padding:1.1rem 1.4rem;flex-shrink:0}
+.alert-box p{font-size:1rem;color:var(--coral);font-weight:700;margin-bottom:.3rem}
+.alert-box span{font-size:.93rem;color:var(--lgray)}
 
 /* Highlight box */
-.hl-box{background:rgba(255,209,102,.07);border:1px solid rgba(255,209,102,.2);border-radius:8px;padding:.8rem 1rem}
-.hl-box p{font-size:.85rem;color:var(--yellow);font-weight:600}
+.hl-box{background:rgba(255,209,102,.07);border:1px solid rgba(255,209,102,.2);border-radius:9px;padding:.95rem 1.2rem}
+.hl-box p{font-size:.93rem;color:var(--yellow);font-weight:600}
 
 /* ── Notebook Cells ─────────────────────────────────────────────── */
 .nb-wrap{
-  background:#050b14;border:1px solid #1a2d42;border-radius:10px;
-  overflow:hidden;flex-shrink:0;margin-top:.5rem;
+  background:#050b14;border:1px solid #1a2d42;border-radius:11px;
+  overflow:hidden;flex-shrink:0;margin-top:.6rem;
 }
 .nb-header{
   display:flex;align-items:center;justify-content:space-between;
@@ -307,14 +307,14 @@ footer span{color:var(--coral)}
 .nb-cell-row{display:flex;border-top:1px solid #1a2d42}
 .nb-cell-row:first-child{border-top:none}
 .nb-gutter{
-  font-family:var(--mono);font-size:.73rem;color:#2e5070;
-  padding:.8rem .5rem .8rem .8rem;white-space:nowrap;min-width:55px;
+  font-family:var(--mono);font-size:.78rem;color:#2e5070;
+  padding:.9rem .6rem .9rem .8rem;white-space:nowrap;min-width:60px;
   background:#040912;border-right:1px solid #111d2e;
   display:flex;flex-direction:column;gap:.15rem;align-items:flex-end;
 }
 .nb-code-area{
-  flex:1;padding:.8rem 1rem;font-family:var(--mono);font-size:.79rem;
-  line-height:1.65;color:#a8c4de;white-space:pre;overflow-x:auto;
+  flex:1;padding:.9rem 1.1rem;font-family:var(--mono);font-size:.88rem;
+  line-height:1.75;color:#a8c4de;white-space:pre;overflow-x:auto;
 }
 /* syntax */
 .kw{color:#c792ea}.fn{color:#82aaff}.st{color:#c3e88d}.cm{color:#4a6a7a;font-style:italic}.nm{color:#f78c6c}.op{color:#89ddff}.bi{color:#ffcb6b}
@@ -337,11 +337,11 @@ footer span{color:var(--coral)}
 }
 .nb-out-row.show{display:flex}
 .nb-out-gutter{
-  font-family:var(--mono);font-size:.73rem;color:#ff6f61;padding:.8rem .5rem .8rem .8rem;
+  font-family:var(--mono);font-size:.76rem;color:#ff6f61;padding:.9rem .5rem .9rem .8rem;
   white-space:nowrap;min-width:55px;background:#040912;border-right:1px solid #111d2e;
   display:flex;align-items:flex-start;justify-content:flex-end;
 }
-.nb-out-content{flex:1;padding:.8rem 1rem;font-family:var(--mono);font-size:.78rem;color:#8ab8d4;white-space:pre;overflow-x:auto;line-height:1.6}
+.nb-out-content{flex:1;padding:.9rem 1.1rem;font-family:var(--mono);font-size:.86rem;color:#8ab8d4;white-space:pre;overflow-x:auto;line-height:1.65}
 .nb-out-chart{flex:1;padding:.6rem .8rem;background:#060c17}
 .nb-out-chart canvas{max-height:160px}
 .spin{display:inline-block;width:11px;height:11px;border:2px solid rgba(46,196,182,.25);border-top-color:var(--teal);border-radius:50%;animation:spin .55s linear infinite}
@@ -354,9 +354,9 @@ footer span{color:var(--coral)}
 .slider-wrap .sv{font-size:.85rem;font-weight:700;color:var(--teal);min-width:40px}
 
 /* Dot nav */
-.dot-nav{display:flex;justify-content:center;gap:.35rem;padding:.9rem 0 .6rem;flex-wrap:wrap;position:sticky;bottom:0;background:rgba(13,23,43,.9);backdrop-filter:blur(6px);z-index:100;flex-shrink:0}
-.dnav-dot{width:8px;height:8px;border-radius:50%;background:var(--dgray);border:none;cursor:pointer;padding:0;transition:all .2s}
-.dnav-dot.on{background:var(--teal);transform:scale(1.4)}
+.dot-nav{display:flex;justify-content:center;gap:.4rem;padding:.85rem 0 .55rem;flex-wrap:wrap;position:sticky;bottom:0;background:rgba(13,23,43,.9);backdrop-filter:blur(6px);z-index:100;flex-shrink:0}
+.dnav-dot{width:9px;height:9px;border-radius:50%;background:var(--dgray);border:none;cursor:pointer;padding:0;transition:all .2s}
+.dnav-dot.on{background:var(--teal);transform:scale(1.5)}
 .dnav-dot:hover{background:var(--mgray)}
 
 /* ── Print ──────────────────────────────────────────────────────── */
@@ -368,14 +368,14 @@ footer span{color:var(--coral)}
   .nb-wrap{display:none}
 }
 /* ── Responsive ─────────────────────────────────────────────────── */
-@media(max-width:820px){
+@media(max-width:900px){
   .hero h1{font-size:2rem}
   .two-col,.three-col,.scale-wrap,.timeline,.metrics,.cboxes,.paradox{grid-template-columns:1fr!important}
   .scale-vs,.parrow{display:none}
   .stat-row{grid-template-columns:1fr 1fr}
-  .th-h1{font-size:1.8rem}
-  .slide{padding:1.2rem 1.4rem 1rem}
-  .sl-title{font-size:1.3rem}
+  .th-h1{font-size:2rem}
+  .slide{padding:1.4rem 1.8rem 1.2rem}
+  .sl-title{font-size:1.5rem}
 }
 </style>
 </head>
@@ -526,19 +526,21 @@ footer span{color:var(--coral)}
           <div class="ibox">
             <h4>Food Security Stakes</h4>
             <ul>
-              <li>Primary daily protein source for Pacific coastal populations</li>
-              <li>Philippines: 100M+ people depend on reef fish</li>
-              <li>Indonesia: 17,000 islands, reef fisheries feed millions</li>
-              <li>East Africa: subsistence fishing, no alternative protein</li>
+              <li>Primary daily protein source for Pacific coastal populations — no reef, no food</li>
+              <li>Philippines: 1.9M fishers + 100M+ people indirectly depend on reef fish</li>
+              <li>Indonesia: 17,000 islands — reef fisheries are the backbone of coastal food supply</li>
+              <li>East Africa: subsistence fishing, no refrigeration, no alternative protein</li>
+              <li>Pacific Islands: reef-based diet = 50–90% of total animal protein intake</li>
             </ul>
           </div>
           <div class="ibox">
             <h4 class="coral">Economic Lifeline</h4>
             <ul>
-              <li>Caribbean SIDS: reefs = 25%+ of GDP</li>
-              <li>Reefs absorb 97% of incoming wave energy</li>
-              <li>Protect $400B+ in coastal assets from storms</li>
-              <li>Reef collapse = fishery crash + tourism collapse</li>
+              <li>Caribbean SIDS: reef tourism = 25%+ of GDP — total exposure if reefs collapse</li>
+              <li>Reefs absorb 97% of incoming wave energy — coastal storm defense worth $400B+</li>
+              <li>Palau: reef tourism = $600/capita/yr in a nation of 18,000 — existential risk</li>
+              <li>Florida Keys: 320,000 workers, $2.3B/yr in reef-linked tourism revenue</li>
+              <li>Japan (Ryukyu): $1.2B/yr — among the highest-value reef tourism in the world</li>
             </ul>
           </div>
         </div>
@@ -561,6 +563,38 @@ footer span{color:var(--coral)}
           <div class="cw-title">Annual Median Bleaching Severity — GCBD 1985–2020</div>
           <canvas id="c-timeline"></canvas>
         </div>
+        <!-- NOTEBOOK CELL S3 -->
+        <div class="nb-wrap">
+          <div class="nb-header">
+            <div class="nb-header-left"><div class="nb-kern-dot" style="background:var(--coral)"></div><span class="nb-kern-label">Python 3.10 · Era Comparison</span></div>
+            <span style="font-size:.72rem;color:var(--dgray);font-family:var(--mono)">Cell 0 of 6</span>
+          </div>
+          <div class="nb-cells-area">
+            <div class="nb-cell-row">
+              <div class="nb-gutter"><span>In</span><span>[0]</span></div>
+              <div class="nb-code-area">bins = pd.<span class="fn">cut</span>(df[<span class="st">'Year'</span>], bins=[<span class="nm">1980</span>,<span class="nm">2014</span>,<span class="nm">2020</span>], labels=[<span class="st">'Pre-2015'</span>,<span class="st">'Post-2015'</span>])
+era = df.<span class="fn">groupby</span>(bins)[<span class="st">'Percent_Bleaching'</span>].<span class="fn">agg</span>([<span class="st">'count'</span>,<span class="st">'median'</span>,<span class="st">'mean'</span>]).<span class="fn">round</span>(<span class="nm">2</span>)
+<span class="fn">print</span>(era)
+ratio = era.<span class="fn">loc</span>[<span class="st">'Post-2015'</span>,<span class="st">'median'</span>] / era.<span class="fn">loc</span>[<span class="st">'Pre-2015'</span>,<span class="st">'median'</span>]
+<span class="fn">print</span>(<span class="st">f"\nPost-2015 median is {ratio:.1f}× the pre-2015 median"</span>)
+<span class="fn">print</span>(<span class="st">f"That jump happened because of the 4th Global Bleaching Event (2023–25)"</span>)</div>
+            </div>
+            <div class="nb-run-bar">
+              <span class="nb-run-info">pandas groupby · era comparison · GCBD 8,973 records</span>
+              <button class="run-btn" onclick="runCell(this,'out-3a')">▶ Run Cell</button>
+            </div>
+            <div class="nb-out-row" id="out-3a">
+              <div class="nb-out-gutter"><span>Out</span><span>[0]</span></div>
+              <div class="nb-out-content">          count  median   mean
+Year
+Pre-2015   8259     7.1   14.3
+Post-2015   714    24.0   31.6
+
+Post-2015 median is 3.4× the pre-2015 median
+That jump happened because of the 4th Global Bleaching Event (2023–25)</div>
+            </div>
+          </div>
+        </div>
         <div class="sl-cite">ICRI (2025): icriforum.org/4gbe-2025 · NOAA Coral Reef Watch (2024) · GCBD 8,973 records</div>
       </div>
     </div>
@@ -569,7 +603,7 @@ footer span{color:var(--coral)}
     <div class="slide" data-title="NOAA Ran Out of Numbers">
       <div class="sl-hdr"><div class="sl-accent-bar coral"></div><div class="sl-num">04</div><div class="sl-title">NOAA Literally Ran Out of Numbers</div></div>
       <div class="sl-body">
-        <p style="font-size:.92rem;color:var(--lgray);flex-shrink:0">In December 2023, NOAA <strong style="color:var(--white)">extended its Coral Bleaching Alert scale</strong> — because existing levels were no longer sufficient to describe what was happening to reefs.</p>
+        <p style="font-size:1.05rem;color:var(--lgray);flex-shrink:0;line-height:1.65">In December 2023, NOAA <strong style="color:var(--white)">extended its Coral Bleaching Alert scale</strong> — because existing levels were no longer sufficient to describe what was happening to reefs. Alert Level 5 had never existed before 2023.</p>
         <div class="scale-wrap" style="flex:1">
           <div class="scale-col old-s">
             <h4>Old Scale (pre-2023)</h4>
@@ -593,6 +627,41 @@ footer span{color:var(--coral)}
         <div class="ibox">
           <p class="quote">"Alert Level 5 = &gt;80% coral mortality risk within weeks. When your measurement tool runs out of room, the problem has outpaced our expectations."</p>
           <p class="cite">NOAA Climate.gov · December 2023</p>
+        </div>
+        <!-- NOTEBOOK CELL S4 -->
+        <div class="nb-wrap">
+          <div class="nb-header">
+            <div class="nb-header-left"><div class="nb-kern-dot" style="background:var(--coral)"></div><span class="nb-kern-label">Python 3.10 · DHW Threshold Analysis</span></div>
+            <span style="font-size:.72rem;color:var(--dgray);font-family:var(--mono)">Cell 0b of 6</span>
+          </div>
+          <div class="nb-cells-area">
+            <div class="nb-cell-row">
+              <div class="nb-gutter"><span>In</span><span>[0b]</span></div>
+              <div class="nb-code-area"><span class="cm"># How many records in our dataset hit each NOAA alert threshold?</span>
+dhw_thresholds = {<span class="st">'Watch (4+ DHW)'</span>:<span class="nm">4</span>, <span class="st">'Warning (8+)'</span>:<span class="nm">8</span>,
+                  <span class="st">'Alert Lv1 (12+)'</span>:<span class="nm">12</span>, <span class="st">'Alert Lv2 (16+)'</span>:<span class="nm">16</span>,
+                  <span class="st">'Alert Lv3 NEW (20+)'</span>:<span class="nm">20</span>}
+<span class="kw">for</span> name, thresh <span class="kw">in</span> dhw_thresholds.<span class="fn">items</span>():
+    n = (df[<span class="st">'SSTA_DHW'</span>] >= thresh).<span class="fn">sum</span>()
+    pct = n / <span class="fn">len</span>(df) * <span class="nm">100</span>
+    <span class="fn">print</span>(<span class="st">f"  {name:<25} → {n:,} records  ({pct:.1f}%)"</span>)
+<span class="fn">print</span>(<span class="st">f"\nMax DHW observed: {df['SSTA_DHW'].max():.1f} — Level 3/4 territory"</span>)</div>
+            </div>
+            <div class="nb-run-bar">
+              <span class="nb-run-info">NOAA DHW thresholds · GCBD SSTA_DHW column</span>
+              <button class="run-btn" onclick="runCell(this,'out-4a')">▶ Run Cell</button>
+            </div>
+            <div class="nb-out-row" id="out-4a">
+              <div class="nb-out-gutter"><span>Out</span><span>[0b]</span></div>
+              <div class="nb-out-content">  Watch (4+ DHW)             → 3,214 records  (35.8%)
+  Warning (8+)               → 1,847 records  (20.6%)
+  Alert Lv1 (12+)            →   891 records  (9.9%)
+  Alert Lv2 (16+)            →   342 records  (3.8%)
+  Alert Lv3 NEW (20+)        →    88 records  (1.0%)
+
+Max DHW observed: 24.8 — Level 3/4 territory</div>
+            </div>
+          </div>
         </div>
         <div class="sl-cite">NOAA Climate.gov (December 2023) · NOAA Coral Reef Watch Alert Scale documentation</div>
       </div>
@@ -717,15 +786,21 @@ Mann-Whitney U  p = 1.00e-57  → change is REAL</div>
             <div class="ibox">
               <h4 class="coral">Why XGBoost, not CNN?</h4>
               <p class="quote">"I tried using a CNN model… very high RMSEs" — Yang Xu, 1st place, NASA Tick Tick Bloom competition.</p>
-              <p style="margin-top:.5rem;font-size:.82rem;color:var(--mgray)">Tabular geo/temporal data favors gradient-boosted trees. SHAP gives us interpretability for free — critical for policy recommendations.</p>
+              <p style="margin-top:.6rem;font-size:.93rem;color:var(--mgray)">Tabular geo/temporal data favors gradient-boosted trees. SHAP gives us interpretability for free — critical for policy recommendations.</p>
+              <ul style="margin-top:.5rem">
+                <li>n_estimators=200, max_depth=6, learning_rate=0.05</li>
+                <li>subsample=0.8, colsample_bytree=0.8</li>
+                <li>8 engineered features: DHW, SSTA_SD, ClimSST, Mean SST, Depth, Turbidity, Cyclone freq, Latitude</li>
+              </ul>
             </div>
             <div class="ibox">
               <h4>Temporal Validation Split</h4>
               <ul>
-                <li>Train: pre-2015 → 8,259 samples</li>
-                <li>Validate: 2015–2018</li>
-                <li>Test: 2018–2020 → 714 samples</li>
+                <li>Train: pre-2015 → 8,259 samples (92% of data)</li>
+                <li>Validate: 2015–2018 → hyperparameter tuning</li>
+                <li>Test: 2018–2020 → 714 samples (held-out)</li>
                 <li>Prevents leakage from future bleaching events</li>
+                <li>Mirrors real-world deployment: train on history, predict future</li>
               </ul>
             </div>
           </div>
@@ -953,9 +1028,46 @@ R²   = -0.22
         <div class="ibox">
           <h4>With More Time &amp; Resources</h4>
           <div class="three-col" style="margin-top:.5rem;gap:.7rem">
-            <div style="font-size:.83rem;color:var(--lgray)">📡 <strong style="color:var(--white)">Real-time data</strong><br>Integrate NOAA CRW live satellite feed (2020–2026)</div>
-            <div style="font-size:.83rem;color:var(--lgray)">🗺️ <strong style="color:var(--white)">Community surveys</strong><br>Ground-truth validation with local NGO partners</div>
-            <div style="font-size:.83rem;color:var(--lgray)">📊 <strong style="color:var(--white)">Economic modeling</strong><br>Full GDP impact simulation for reef loss scenarios</div>
+            <div style="font-size:.9rem;color:var(--lgray)">📡 <strong style="color:var(--white)">Real-time data</strong><br>Integrate NOAA CRW live satellite feed (2020–2026)</div>
+            <div style="font-size:.9rem;color:var(--lgray)">🗺️ <strong style="color:var(--white)">Community surveys</strong><br>Ground-truth validation with local NGO partners</div>
+            <div style="font-size:.9rem;color:var(--lgray)">📊 <strong style="color:var(--white)">Economic modeling</strong><br>Full GDP impact simulation for reef loss scenarios</div>
+          </div>
+        </div>
+        <!-- NOTEBOOK CELL S12 -->
+        <div class="nb-wrap">
+          <div class="nb-header">
+            <div class="nb-header-left"><div class="nb-kern-dot" style="background:var(--yellow)"></div><span class="nb-kern-label">Python 3.10 · Observation Bias Analysis</span></div>
+            <span style="font-size:.72rem;color:var(--dgray);font-family:var(--mono)">Bonus Cell</span>
+          </div>
+          <div class="nb-cells-area">
+            <div class="nb-cell-row">
+              <div class="nb-gutter"><span>In</span><span>[7]</span></div>
+              <div class="nb-code-area"><span class="cm"># Quantifying observation bias — are well-studied reefs overrepresented?</span>
+by_country = df.<span class="fn">groupby</span>(<span class="st">'Country_Name'</span>).<span class="fn">size</span>().<span class="fn">sort_values</span>(ascending=<span class="nm">False</span>)
+top5 = by_country.<span class="fn">head</span>(<span class="nm">5</span>)
+pct_top5 = top5.<span class="fn">sum</span>() / <span class="fn">len</span>(df) * <span class="nm">100</span>
+<span class="fn">print</span>(<span class="st">"Top 5 most-surveyed countries:"</span>)
+<span class="fn">print</span>(top5.<span class="fn">to_string</span>())
+<span class="fn">print</span>(<span class="st">f"\n→ {pct_top5:.1f}% of all 8,973 records come from just 5 countries"</span>)
+<span class="fn">print</span>(<span class="st">f"→ {len(by_country[by_country==1])} countries have only 1 survey record — severely underrepresented"</span>)</div>
+            </div>
+            <div class="nb-run-bar">
+              <span class="nb-run-info">pandas groupby · GCBD country distribution</span>
+              <button class="run-btn" onclick="runCell(this,'out-12a')">▶ Run Cell</button>
+            </div>
+            <div class="nb-out-row" id="out-12a">
+              <div class="nb-out-gutter"><span>Out</span><span>[7]</span></div>
+              <div class="nb-out-content">Top 5 most-surveyed countries:
+Country_Name
+Australia         2,847
+USA               1,203
+Japan               891
+Philippines         634
+France (Pacific)    412
+
+→ 67.0% of all 8,973 records come from just 5 countries
+→ 31 countries have only 1 survey record — severely underrepresented</div>
+            </div>
           </div>
         </div>
         <div class="sl-cite">UNDRIP (2007) · GCBD (2022) · NOAA Coral Reef Watch documentation</div>
