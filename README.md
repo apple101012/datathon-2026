@@ -10,7 +10,7 @@
 | Name | Role | GitHub |
 |------|------|--------|
 | Shihab Jamal | ML Analysis & Data Science | [@apple101012](https://github.com/apple101012) |
-| Nyviruz | Domain Research & Presentation | [@nyviruzz](https://github.com/nyviruzz) |
+| Visula Peduru | Domain Research & Presentation | [@nyviruzz](https://github.com/nyviruzz) |
 
 ## Abstract
 
